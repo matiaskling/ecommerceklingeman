@@ -1,35 +1,29 @@
-import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
+import { CartWidget } from "./CartWidget";
 
 const NavBar = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Curso de React</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">About Us</Nav.Link>
-              <NavDropdown title="Lista de Categorías" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  Categoría 1
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Categoría 2
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Categoría 3
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Categoría 4
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+  <Navbar>
+    <Container>
+      <Navbar.Brand href="#home">MyEcommerce</Navbar.Brand>
+        <Navbar.Toggle />
+      <Navbar.Collapse className="justify-content-end">
+        <Nav className="me-auto">
+            <Nav.Link href="#home">Inicio</Nav.Link>
+            <Nav.Link href="#link">Quienes somos</Nav.Link>
+            <NavDropdown title="Catalogos" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Catalogo 1</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Catalogo 2</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Catalogo 3</NavDropdown.Item>
+            </NavDropdown>
+        </Nav>
+          <Navbar.Text>
+          <CartWidget/> 
+        </Navbar.Text>
+      </Navbar.Collapse>
+    </Container>
+</Navbar>
     </div>
   );
 };
