@@ -11,7 +11,6 @@ const NavBar = () => {
       <Navbar.Collapse className="justify-content-end">
         <Nav className="me-auto">
             <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Quienes somos</Nav.Link>
             <NavDropdown title="Catalogos" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Catalogo 1</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Catalogo 2</NavDropdown.Item>
