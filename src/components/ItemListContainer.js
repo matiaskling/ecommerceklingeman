@@ -20,12 +20,13 @@ export function ItemListContainer() {
     }, [])
 
     return (
-        <div>
-            {loading ?
-            <h2>Cargando</h2> :
-           
-           <ItemList products={products} />
-                         }
-        </div>
+       
+            <div>
+                {loading ?
+                <h2>Cargando</h2> :
+            
+            <ItemList products={products} />
+                            }
+            </div>
     )
 }

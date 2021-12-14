@@ -1,0 +1,41 @@
+[33mcommit 48e92fa9491480ecfa6e68fae03356b681962011[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Wed Dec 8 17:29:31 2021 -0300
+
+    add styles
+
+[33mcommit 2b8190ed82a8ebd71407c37e08ffafb07341bb0e[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Mon Dec 6 15:12:41 2021 -0300
+
+    add products
+
+[33mcommit 02be396c3839745f6a099c6b40de3b360347c00f[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Fri Nov 26 16:34:02 2021 -0300
+
+    add icon and container
+
+[33mcommit 496aaeb14f964dd077e550f9e6587c265fcf0bed[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Wed Nov 24 17:10:59 2021 -0300
+
+    deleting files and editing navbar
+
+[33mcommit 9e3680d13733fe61fabbde15a67b275b4a0686a2[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Wed Nov 24 17:05:50 2021 -0300
+
+    added nav bar
+
+[33mcommit 7b37f52f8b2217537ea5728131210a00fdd0ce0a[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Wed Nov 24 16:59:50 2021 -0300
+
+    new project for react course
+
+[33mcommit 023285b150374abe7d653f45eeb08a0d0010e01f[m
+Author: Matias <matiasklingeman114@outlook.com>
+Date:   Wed Nov 24 16:55:08 2021 -0300
+
+    Initialize project using Create React App
