@@ -8,14 +8,16 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         getFetch
-        .then(resp => setProduct(resp.find(prod => prod.id === 2)))
+        .then(resp => setProduct(resp.filter(prod => prod.id === 2)))
         .catch(err => console.log(err))
     })
 
 
     return (
         <div>
-            <ItemDetail item={item}/>
+           {item.map((produ) => (
+        <ItemDetail prod={produ} key={produ.id} />
+      ))}
         </div>
     )
 }

@@ -1,14 +1,15 @@
 import React from 'react'
 
 
-function itemDetail({item}) {
+function ItemDetail({prod}) {
 
     return (
-        <div key={item.id}>
-            <p>{item.price}</p>
-            <p>{item.name}</p>
+        <div key={prod.id}>
+            <p>{prod.price}</p>
+            <p>{prod.name}</p>
+            <h1>Item Detail</h1>
         </div>
     )
 }
 
-export default itemDetail
+export default ItemDetail
