@@ -1,14 +1,38 @@
 import React from 'react'
+import '../styles/itemDetail.css' 
+import ItemCount from './ItemCount'
 
 
 function ItemDetail({prod}) {
 
     return (
-        <div key={prod.id}>
-            <p>{prod.price}</p>
-            <p>{prod.name}</p>
-            <h1>Item Detail</h1>
-        </div>
+        <main className="container" key={prod.id}>
+         
+            <div className='img-product'>
+                <img src={prod.img}></img>
+            </div>
+
+            <div className='right-column'>
+                <div className='product-description'>
+                    <h1>{prod.name}</h1>
+                    <span>{prod.category}</span>
+                    <p>{prod.description}</p>
+                    <p>Disponibles: <span className='stock'>{prod.stock}</span></p>
+                    <p><ItemCount stock={prod.stock} initial={1}/></p>
+                </div>
+
+                <div className='product-price'>
+                    <span>${prod.price}</span>
+                </div>
+
+                <div className='cart'>
+                   
+                </div>
+
+
+            </div>
+
+        </main>
     )
 }
 

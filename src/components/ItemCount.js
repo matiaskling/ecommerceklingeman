@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Button} from "react-bootstrap";
-
+import '../styles/itemCount.css'
 
 
 export function ItemCount({initial, stock, onAdd}) {
@@ -19,11 +18,13 @@ export function ItemCount({initial, stock, onAdd}) {
 
     return (
         <div>
-             <p>{count}</p>
-            <Button variant="outline-primary" onClick={addItem}>+</Button>
-            <Button type="submit" variant="primary" onClick={onAdd}>Agregar al carrito</Button>
-
-            <Button variant="outline-primary" onClick={removeItem}> -</Button>
+            
+            <button className='button' onClick={addItem}>+</button>
+            <span>{count}</span>
+            <button className="button" onClick={removeItem}> -</button>
+            <div>
+            <button type="submit" className='button' onClick={onAdd}>Agregar al carrito</button>
+            </div>
         </div>
     )
 }

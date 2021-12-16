@@ -1,22 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { getFetch } from '../helpers/products'
 import ItemDetail from './ItemDetail'
+import {useParams } from 'react-router-dom'
 
 function ItemDetailContainer() {
     const [item, setProduct] = useState([])
 
+    const {id} = useParams();
+
 
     useEffect(() => {
-        getFetch
-        .then(resp => setProduct(resp.filter(prod => prod.id === 2)))
+        if (id) {
+            getFetch
+        .then(resp => setProduct(resp.filter(prod => prod.id === parseInt(id))))
         .catch(err => console.log(err))
-    })
+
+        } else {
+            getFetch
+            .then(resp => setProduct(resp))
+            .catch(err => console.log(err)) 
+        }
+        
+    },[id])
 
 
     return (
         <div>
-           {item.map((produ) => (
-        <ItemDetail prod={produ} key={produ.id} />
+           {item.map((prod) => (
+        <ItemDetail prod={prod} key={prod.id} />
       ))}
         </div>
     )

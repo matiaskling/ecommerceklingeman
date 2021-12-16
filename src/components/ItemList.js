@@ -1,14 +1,16 @@
 import React from 'react'
 import Item from './Item'
+import '../styles/itemList.css' 
 
 
 function ItemList({products}) {
     return (
-        <div>
+        <main className='container'>
+     
         { products.map((prod) => <Item prod= {prod} key={prod.id}/> )}
 
-        </div>
-    
+       </main>
+        
        
     )
 }

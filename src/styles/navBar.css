@@ -1,0 +1,10 @@
+.nav {
+    justify-content: space-around;
+    align-items: center;
+    background-color:#08c5ff;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
