@@ -23,7 +23,7 @@ export function ItemCount({initial, stock, onAdd}) {
             <span>{count}</span>
             <button className="button" onClick={removeItem}> -</button>
             <div>
-            <button type="submit" className='button' onClick={onAdd}>Agregar al carrito</button>
+            <button type="submit" className='button' onClick={()=> onAdd(count)}>Agregar al carrito</button>
             </div>
         </div>
     )

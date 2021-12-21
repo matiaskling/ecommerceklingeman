@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { Card, Button} from "react-bootstrap";
-import ItemCount from './ItemCount'
+
 
 
 export default function Item({prod}) {
@@ -15,13 +15,10 @@ export default function Item({prod}) {
                     Precio: {prod.price}
                     </Card.Text>
                     <p> Stock: {prod.stock}</p>
-                   <p>Cantidad: </p>
-                
-                    <ItemCount stock={prod.stock} initial={1}/>
                     <Link to= {`/detalle/${prod.id}`}>
                        <Button> Ver detalle </Button>
                     </Link>
-                 
+
                  
                 </Card.Body>
         </Card>

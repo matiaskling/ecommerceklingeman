@@ -27,7 +27,7 @@ function ItemDetailContainer() {
     return (
         <div>
            {item.map((prod) => (
-        <ItemDetail prod={prod} key={prod.id} />
+            <ItemDetail prod={prod} key={prod.id} />
       ))}
         </div>
     )
