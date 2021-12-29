@@ -10,15 +10,19 @@ export const useCartContext = () =>  useContext(CartContext)
         const [cartList, setCartList] = useState([])
 
         function addCart (item) {
-            const index = cartList.findIndex(i => i.id === item.id)
+            const index = cartList.findIndex((i) => i.id === item.id)
   
             if (index > -1) {
               const oldQy = cartList[index].cantidad
     
               cartList.splice(index, 1)
   
-              setCartList([...cartList, { ...item, cantidad: item.cantidad + oldQy}])
-  
+             
+            setCartList((cartList) => [
+                ...cartList,
+                { ...item, cantidad: item.cantidad + oldQy },
+            ]);
+        
             } else {
               setCartList([...cartList,item])
             }
@@ -30,10 +34,11 @@ export const useCartContext = () =>  useContext(CartContext)
 
 
     return (
-        <CartContext.Provider value={{
-            cartList,
-            addCart,
-            removeCart
+        <CartContext.Provider 
+            value={{
+                cartList,
+                addCart,
+                removeCart
         }}>
             { children }
         </CartContext.Provider>

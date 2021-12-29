@@ -8,8 +8,6 @@ import CartContextProvider  from './Context/CartContext'
 
 
 
-
-
 function App() {
 
  
@@ -24,7 +22,6 @@ function App() {
                 <Route exact path="/detalle/:id" element={<ItemDetailContainer/>}/> 
                 <Route exact path="/cart" element={<Cart/>} />
             </Routes>
-        
         </div>
       </BrowserRouter>
     </CartContextProvider>
