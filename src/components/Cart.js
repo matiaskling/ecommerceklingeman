@@ -1,4 +1,5 @@
 import { useCartContext } from "../Context/CartContext"
+import { Link } from "react-router-dom"
 
 function Cart() {
 
@@ -6,10 +7,13 @@ function Cart() {
 
     return (
         <div>
-            {  cartList.map(prod=> <li>{prod.name}   {prod.cantidad}</li>) }
-            <button onClick={removeCart} >Vaciar Carrito</button>
+            {  cartList.map(prod=> <li>{prod.name}   <p>Cant: {prod.cantidad}</p></li>) }
+            <button onClick={removeCart}>Vaciar Carrito</button>
         </div>
     )
 }
+
+
+
 
 export default Cart

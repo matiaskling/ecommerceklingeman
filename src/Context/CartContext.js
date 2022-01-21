@@ -9,22 +9,28 @@ export const useCartContext = () =>  useContext(CartContext)
 
         const [cartList, setCartList] = useState([])
 
-        function addCart (item) {
-            const index = cartList.findIndex((i) => i.id === item.id)
+
+        const totalPrice = () =>{
+            return cartList.reduce((acum, prod) => acum + (prod.quantity * prod.price) , 0)
+          }
+    
+
+        function addCart (prod) {
+            const index = cartList.findIndex((i) => i.id === prod.id)
   
             if (index > -1) {
-              const oldQy = cartList[index].cantidad
+              const oldQy = cartList[index].quantity
     
               cartList.splice(index, 1)
   
              
             setCartList((cartList) => [
                 ...cartList,
-                { ...item, cantidad: item.cantidad + oldQy },
+                { ...prod, quantity: prod.quantity + oldQy },
             ]);
         
             } else {
-              setCartList([...cartList,item])
+              setCartList([...cartList,prod])
             }
         }
 
@@ -38,7 +44,8 @@ export const useCartContext = () =>  useContext(CartContext)
             value={{
                 cartList,
                 addCart,
-                removeCart
+                removeCart,
+                totalPrice
         }}>
             { children }
         </CartContext.Provider>

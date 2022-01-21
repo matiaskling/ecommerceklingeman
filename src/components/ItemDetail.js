@@ -1,18 +1,23 @@
 import React, { useState } from 'react'
+import { memo } from 'react';
+import { Link } from "react-router-dom";
 import '../styles/itemDetail.css' 
 import ItemCount from './ItemCount'
-import useCartContext  from '../Context/CartContext'
+import {useCartContext}  from '../Context/CartContext'
 
 
 
-function ItemDetail({prod}) {
+const  ItemDetail = memo (({prod}) => {
     
 
     const {addCart} = useCartContext()
 
+    const [goCart, setGoCart] = useState(false)
+
     function onAdd (cant){
         console.log(cant)
         addCart( {...prod, cantidad:cant} ) 
+        setGoCart(true);
     }
 
 
@@ -20,7 +25,7 @@ function ItemDetail({prod}) {
         <main className="container" key={prod.id}>
          
             <div className='img-product'>
-                {/* <img src={prod.img}></img> */}
+                {<img src={prod.img} alt=''/>}
             </div>
 
             <div className='right-column'>
@@ -32,9 +37,12 @@ function ItemDetail({prod}) {
                     <div className='product-price'>
                     <span>${prod.price}</span>
                     </div>
-                    <p> 
-                    <ItemCount onAdd={onAdd} stock={10} />
-                           
+                    <p>
+                    {goCart === false ? (
+                    <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} />
+                    ) : (
+                    <Link className="goCart" to="/cart">Ir al carrito</Link>
+                     )}        
                     </p>
                 </div>
 
@@ -46,7 +54,7 @@ function ItemDetail({prod}) {
             </div>
 
         </main>
-    )
-}
+    ) 
+} )
 
 export default ItemDetail
