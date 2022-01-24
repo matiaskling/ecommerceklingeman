@@ -42,7 +42,9 @@ const  ItemDetail = memo (({prod}) => {
                     <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} />
                     ) : (
                     <Link className="goCart" to="/cart">Ir al carrito</Link>
-                     )}        
+                   
+                     )}  
+                       
                     </p>
                 </div>
 
