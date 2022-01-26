@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import './App.css'
 import Cart from './components/Cart'
 import CartContextProvider  from './Context/CartContext'
+import Form from "./components/Form"
 
 
 
@@ -21,6 +22,7 @@ function App() {
                 <Route exact path="/categoria/:idCate" element={<ItemListContainer/>}/>
                 <Route exact path="/detalle/:id" element={<ItemDetailContainer/>}/> 
                 <Route exact path="/cart" element={<Cart/>} />
+                <Route exact path="/form" element={<Form/>} />
             </Routes>
         </div>
       </BrowserRouter>

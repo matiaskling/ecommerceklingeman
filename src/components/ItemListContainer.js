@@ -2,11 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import {useParams} from 'react-router-dom'
 import ItemList from './ItemList';
-import {collection, doc, getDoc, getFirestore, getDocs, query, where} from 'firebase/firestore'
-
-
-
-
+import {collection, getFirestore, getDocs, query, where} from 'firebase/firestore'
 
 
 export function ItemListContainer() {
@@ -26,7 +22,6 @@ export function ItemListContainer() {
 
             getDocs(queryCollection)
             .then(resp => setProducts(resp.docs.map(prod =>  ({ id: prod.id, ...prod.data() }) )))
-            .catch(e => console.log(e))
             .finally(()=> setLoading(false))
 
         } else {
@@ -34,7 +29,6 @@ export function ItemListContainer() {
             const queryCollection = collection(db, 'products')
             getDocs(queryCollection)
             .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) )))
-            .catch(e => console.log(e))
             .finally(setLoading(false))
         }
     }, [idCate])

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import '../styles/itemDetail.css' 
 import ItemCount from './ItemCount'
 import {useCartContext}  from '../Context/CartContext'
+import {Card } from 'react-bootstrap'
 
 
 
@@ -14,9 +15,9 @@ const  ItemDetail = memo (({prod}) => {
 
     const [goCart, setGoCart] = useState(false)
 
-    function onAdd (cant){
-        console.log(cant)
-        addCart( {...prod, cantidad:cant} ) 
+    function onAdd (Qy){
+        console.log(Qy)
+        addCart( {...prod, quantity:Qy} ) 
         setGoCart(true);
     }
 
@@ -24,9 +25,7 @@ const  ItemDetail = memo (({prod}) => {
     return (
         <main className="container" key={prod.id}>
          
-            <div className='img-product'>
-                {<img src={prod.img} alt=''/>}
-            </div>
+         <Card.Img variant="top" src={prod.img} style= {{width:'300px', height:'300px'}}/>
 
             <div className='right-column'>
                 <div className='product-description'>

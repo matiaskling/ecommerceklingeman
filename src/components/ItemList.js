@@ -5,11 +5,13 @@ import '../styles/itemList.css'
 
 function ItemList({products}) {
     return (
-        <main className='container'>
+        <main className='flex-container'>
      
         { products.map((prod) => <Item prod= {prod} key={prod.id}/> )}
 
        </main>
+
+       
         
        
     )

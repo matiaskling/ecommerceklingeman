@@ -19,14 +19,19 @@ function ItemDetailContainer() {
             .then(resp => setProd( { id: resp.id, ...resp.data() } ))
             .catch(err => console.log(err))
             .finally(()=>setLoading(false))
-    },[]) 
+    },[id]) 
 
 
 
     return (
         <div>
-
-            <ItemDetail prod={prod} key={prod.id} />
+                {Loading ? 
+                <h2>Cargando</h2> : 
+                
+                <ItemDetail prod={prod} key={prod.id} />
+                    
+                }
+            
    
         </div>
     )

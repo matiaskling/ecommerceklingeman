@@ -5,7 +5,10 @@ html, body {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
+.flex-container {
     display: flex;
-
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+ 
 }

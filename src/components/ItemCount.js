@@ -9,11 +9,11 @@ export function ItemCount({initial, stock, onAdd}) {
 
     const addItem = () => {
         
-       count < stock ? setCount(prev => prev + 1) : alert('compra maxima');
+       if(count < stock) {setCount(prev => prev + 1)};
     }
 
     const removeItem = () =>{
-        count > initial ? setCount(prev => prev - 1) : alert('compra minima')
+        if(count > initial){ setCount(prev => prev - 1)}
     }
 
     return (

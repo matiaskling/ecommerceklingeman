@@ -29,25 +29,27 @@ export const useCartContext = () =>  useContext(CartContext)
             }
         }
 
-        function removeCart(){
-            setCartList([])
-        }
-
-        const removeItem = (id) => {
-            setCartList( cartList.filter(prod => prod.id !== id))
-        }
-
-        const addQuantity = (prod) => {
-
+        
+         const allItems = ()  => {
+            return cartList.reduce((acc, prod) => acc + prod.quantity, 0);
+         }
         
 
-
+        const removeItem = (id) => {
+           const removed = setCartList( cartList.filter(prod => prod.id !== id))
+            return removed;
         }
 
-        const removeQuantity = (prod) => {
 
-            
+        const totalAmount = () => {
+            return cartList.reduce((acc, prod) => acc + prod.price * prod.quantity, 0);
+                
+        }
+      
+      
 
+        function removeCart(){
+            setCartList([])
         }
 
 
@@ -58,6 +60,8 @@ export const useCartContext = () =>  useContext(CartContext)
                 addCart,
                 removeCart,
                 removeItem,
+                allItems,
+                totalAmount,
 
               
         }}>
