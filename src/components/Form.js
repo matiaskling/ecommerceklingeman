@@ -96,7 +96,7 @@ const generateOrder = async (e) =>{
           return error;
         }}
 
-        onSubmit={(valores, {resetForm}) => {
+        onSubmit={({resetForm}) => {
           resetForm();
         }}
       >

@@ -17,7 +17,6 @@ function ItemDetailContainer() {
             const queryDb = doc(db, 'products', id)
             getDoc(queryDb)
             .then(resp => setProd( { id: resp.id, ...resp.data() } ))
-            .catch(err => console.log(err))
             .finally(()=>setLoading(false))
     },[id]) 
 

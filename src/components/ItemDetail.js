@@ -16,7 +16,6 @@ const  ItemDetail = memo (({prod}) => {
     const [goCart, setGoCart] = useState(false)
 
     function onAdd (Qy){
-        console.log(Qy)
         addCart( {...prod, quantity:Qy} ) 
         setGoCart(true);
     }
